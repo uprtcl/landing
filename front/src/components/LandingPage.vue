@@ -2,8 +2,7 @@
   <div class="page-container">
     <div v-if="!loading" class="">
       <div class="w3-row section first">
-        <div class="w3-row part">
-          <img src="./../assets/background-1.png" alt="">
+        <div class="w3-row part top-banner">
         </div>
         <div class="w3-row center">
           <div class="w3-col s12 m6 logo-col">
@@ -19,8 +18,7 @@
           <div class="w3-col s12 m6 top-sentence-col gray" v-html="topSentence">
           </div>
         </div>
-        <div class="part">
-          <img src="./../assets/background-2.png" alt="">
+        <div class="w3-row part bottom-banner">
         </div>
       </div>
       <div class="w3-row section second light-background">
@@ -44,7 +42,9 @@
               <img src="./../assets/arrow.png" alt="">
             </div>
             <div @click="swipeRight()" class="feature-vert-container feature-left-container">
-              <img src="./../assets/arrow.png" alt="">
+              <div class="arrow-row">
+                <img src="./../assets/arrow.png" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -174,6 +174,14 @@ export default {
 
 <style scoped>
 
+.first > .top-banner {
+  background: url('./../assets/background-1.png') center left / cover no-repeat;
+}
+
+.first > .bottom-banner {
+  background: url('./../assets/background-2.png') center left / cover no-repeat;
+}
+
 .gray {
   color: #5a5a66ff;
 }
@@ -263,6 +271,7 @@ export default {
 
 .section.second {
   height: 70vh;
+  max-height: 500px;
 }
 
 .second > .top-subsentence {
@@ -276,17 +285,20 @@ export default {
   height: 70%;
 }
 
-
 .second > .feature-row > .features-title {
   text-align: left;
   font-size:18px;
   font-weight: bold;
   padding: 40px 20px 30px 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 
 .second .features-container {
   position: relative;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .second .feature-background {
@@ -295,6 +307,7 @@ export default {
 
 .second .feature-background > img {
   width: 94%;
+  max-width: 500px;
 }
 
 .second .feature-vert-container {
@@ -308,30 +321,36 @@ export default {
 
 .second .feature-text-container {
   width: 100%;
-  padding: 0px 25px;
+  padding: 0px 30px;
   font-size: 18px;
 }
 
 .second .feature-right-container {
-  width: 20px;
+  width: 5%;
   right: 5px;
+  cursor: pointer;
 }
 
 .second .feature-left-container {
-  width: 20px;
+  width: 5%;
   left: 5px;
+  cursor: pointer;
 }
 
 .second .feature-vert-container > img {
   width: 20px;
 }
 
-.second .feature-left-container > img {
+.second .feature-left-container .arrow-row > img {
   transform: rotate(180deg);
+  float: right;
+  width: 20px;
 }
 
 .section.third {
   height: 80vh;
+  max-height: 540px;
+  padding-top: 20px;
 }
 
 .section.third h3 {
@@ -350,10 +369,13 @@ export default {
 .third .spec-feature-text {
   height: calc(100% - 150px);
   padding: 10px 10px;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
 .contact img {
   width: 80%;
+  max-width: 300px;
 }
 
 .contact > .text-div {
