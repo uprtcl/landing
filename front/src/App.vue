@@ -16,12 +16,14 @@ export default {
 </script>
 
 <style>
+
+html, body, h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
