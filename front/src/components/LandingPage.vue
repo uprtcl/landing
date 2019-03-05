@@ -94,7 +94,9 @@
     <div v-else class="">
       <img class="loader-gif" src="./../assets/spinner-loop.gif" alt="">
     </div>
-  </div>
+  </div
+  max-width: 400px;
+  margin: 0 auto;>
 
 </template>
 
@@ -192,6 +194,8 @@ export default {
 
 .loader-gif {
     width: 100vw;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .page-container {
