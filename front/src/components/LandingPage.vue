@@ -159,25 +159,36 @@ export default {
       topSubsentence: '',
       featuresTitle: '',
       keyFeatures: [],
-      keyFeatureIx: 1,
+      keyFeatureIx: 0,
       techFeatures: [],
-      keyFeaturesUrls: []
+      keyFeaturesUrls: [],
+      timerId: null
     }
   },
 
   methods: {
     swipeLeft () {
-      this.keyFeatureIx = this.keyFeatureIx + 1
-
-      if (this.keyFeatureIx >= this.keyFeatures.length) {
-        this.keyFeatureIx = 0
-      }
+      clearInterval(this.timerId)
+      this.switchFeature (true)
     },
     swipeRight () {
-      this.keyFeatureIx = this.keyFeatureIx - 1
+      clearInterval(this.timerId)
+      this.switchFeature (false)
+    },
+    switchFeature (left) {
+      let left2 = typeof left === 'undefined' ? true : left
+      if (left2) {
+        this.keyFeatureIx = this.keyFeatureIx + 1
 
-      if (this.keyFeatureIx < 0) {
-        this.keyFeatureIx = this.keyFeatureIx = this.keyFeatures.length - 1
+        if (this.keyFeatureIx >= this.keyFeatures.length) {
+          this.keyFeatureIx = 0
+        }
+      } else {
+        this.keyFeatureIx = this.keyFeatureIx - 1
+
+        if (this.keyFeatureIx < 0) {
+          this.keyFeatureIx = this.keyFeatureIx = this.keyFeatures.length - 1
+        }
       }
     },
     updateContent () {
@@ -220,6 +231,7 @@ export default {
 
   created () {
     this.updateContent()
+    this.timerId = setInterval(this.switchFeature, 3500)
   }
 
 }
