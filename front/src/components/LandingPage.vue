@@ -1,4 +1,4 @@
-<template>
+/<template>
   <div class="page-container">
     <div v-if="!loading" class="">
       <div class="w3-row section first">
@@ -6,36 +6,57 @@
         </div>
         <div class="w3-row center">
           <div class="w3-col s12 m6 logo-col">
-            <div class="logo-container">
+            <div class="logo-container relative">
               <div class="logo-img-div">
                 <img src="./../assets/logo.png" alt="">
               </div>
               <div class="logo-txt-div">
                 {{ projectName }}
               </div>
+              <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49e695af0109"
+                target="_blank"
+                class="prtcl_-icon prtcl_-icon-white">
+              </a>
             </div>
           </div>
-          <div class="w3-col s12 m6 top-sentence-col gray" v-html="topSentence">
+          <div class="w3-col s12 m6 top-sentence-col gray relative">
+            <div class="w3-row" v-html="topSentence"></div>
+            <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac109cd2-6939-1811-8169-399c63db0062"
+              target="_blank"
+              class="prtcl_-icon prtcl_-icon-white">
+            </a>
           </div>
         </div>
         <div class="w3-row part bottom-banner">
         </div>
       </div>
       <div class="w3-row section second light-background">
-        <div class="w3-row top-subsentence">
+        <div class="w3-row top-subsentence relative">
           {{ topSubsentence }}
+          <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac109cd2-6939-1811-8169-399dca610084"
+            target="_blank"
+            class="prtcl_-icon prtcl_-icon-grey">
+          </a>
         </div>
         <div class="w3-row feature-row">
-          <div class="w3-row features-title">
+          <div class="w3-row features-title relative">
             {{ featuresTitle }}
+            <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac109cd2-6939-1811-8169-39a0548e00a6"
+              target="_blank"
+              class="prtcl_-icon prtcl_-icon-white">
+            </a>
           </div>
           <div class="w3-row features-container">
             <div class="feature-background">
               <img src="./../assets/feature-background.png" alt="">
             </div>
             <div class="feature-vert-container feature-text-container">
-              <div class="feature-text">
+              <div class="feature-text relative">
                 {{ keyFeatures[keyFeatureIx] }}
+                <a :href="keyFeaturesUrls[keyFeatureIx]"
+                  target="_blank"
+                  class="prtcl_-icon prtcl_-icon-white features-icon">
+                </a>
               </div>
             </div>
             <div @click="swipeLeft()" class="feature-vert-container feature-right-container">
@@ -53,28 +74,48 @@
         <div class="spec-feature-graphic">
           <img src="./../assets/tech-feature-1.png" alt="">
         </div>
-        <div class="spec-feature-text" v-html="techFeatures[0]">
+        <div class="spec-feature-text relative">
+          <div class="" v-html="techFeatures[0]"></div>
+          <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-39a080b900c7/cards/ac109cd2-6939-1811-8169-39a2cb1500e9"
+            target="_blank"
+            class="prtcl_-icon prtcl_-icon-white">
+          </a>
         </div>
       </div>
       <div class="w3-row section third light-background">
         <div class="spec-feature-graphic">
           <img src="./../assets/tech-feature-2.png" alt="">
         </div>
-        <div class="spec-feature-text" v-html="techFeatures[1]">
+        <div class="spec-feature-text relative">
+          <div class="" v-html="techFeatures[1]"></div>
+          <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-39a080b900c7/cards/ac109cd2-6939-1811-8169-39a6516d010b"
+            target="_blank"
+            class="prtcl_-icon prtcl_-icon-white">
+          </a>
         </div>
       </div>
       <div class="w3-row section third">
         <div class="spec-feature-graphic">
           <img src="./../assets/tech-feature-3.png" alt="">
         </div>
-        <div class="spec-feature-text" v-html="techFeatures[2]">
+        <div class="spec-feature-text relative">
+          <div class="" v-html="techFeatures[2]"></div>
+          <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-39a080b900c7/cards/ac109cd2-6939-1811-8169-39aef1b3016e"
+            target="_blank"
+            class="prtcl_-icon prtcl_-icon-white">
+          </a>
         </div>
       </div>
       <div class="w3-row section third light-background">
         <div class="spec-feature-graphic">
           <img src="./../assets/tech-feature-4.png" alt="">
         </div>
-        <div class="spec-feature-text" v-html="techFeatures[3]">
+        <div class="spec-feature-text relative">
+          <div class="" v-html="techFeatures[3]"></div>
+          <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-39a080b900c7/cards/ac109cd2-6939-1811-8169-39b9e46401d1"
+            target="_blank"
+            class="prtcl_-icon prtcl_-icon-white">
+          </a>
         </div>
       </div>
       <div class="w3-row section contact">
@@ -116,7 +157,8 @@ export default {
       featuresTitle: '',
       keyFeatures: [],
       keyFeatureIx: 1,
-      techFeatures: []
+      techFeatures: [],
+      keyFeaturesUrls: []
     }
   },
 
@@ -155,6 +197,12 @@ export default {
           topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 3').card.text,
           topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 4').card.text
         ]
+        this.keyFeaturesUrls = [
+          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce11730001',
+          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce378b0023',
+          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce56f90045',
+          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce76890067'
+        ]
         let techSection = subsections.find(s => s.title === 'Technical Section')
         this.techFeatures = [
           techSection.cardsWrappersCommon.find(c => c.card.title === 'contexts').card.text,
@@ -175,6 +223,40 @@ export default {
 </script>
 
 <style scoped>
+
+.relative {
+  position: relative;
+}
+
+.prtcl_-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+}
+
+.prtcl_-icon-grey {
+  background: url('./../assets/grey_.png')  center left / cover no-repeat;
+}
+
+.prtcl_-icon-grey:hover {
+  background: url('./../assets/white_.png')  center left / cover no-repeat;
+}
+
+.prtcl_-icon-white {
+  background: url('./../assets/grey_.png')  center left / cover no-repeat;
+}
+
+.prtcl_-icon-white:hover {
+  background: url('./../assets/black_.png')  center left / cover no-repeat;
+}
+
+.features-icon {
+  top: -20px !important;
+  right: 20px !important;
+}
 
 .first > .top-banner {
   background: url('./../assets/background-1.png') center left / cover no-repeat;
