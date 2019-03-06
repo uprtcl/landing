@@ -132,8 +132,8 @@
         </div>
         <div class="w3-row light-background">
           <div class="explain-row">
-            * The content of this page is specified in the "Landing" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a03130000/messages" class="icon-inline"></a> (sub)context of the "Branding" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac12f44a-68ca-1500-8168-ccaf25a800b1/messages" class="icon-inline"></a>
-             (sub)context of the "_Protocol" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac135cf6-63a8-1dc2-8163-ab7583ea0053/messages" class="icon-inline"></a> context, using <a href="http://www.collectiveone.org">the current prototype of CollectiveOne</a>. This is a simple example of how "contexts" can be used as conversation spaces and content containers.
+            * The content of this page is specified in the "Landing" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a03130000/messages" target="_blank" class="icon-inline"></a> (sub)context of the "Branding" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac12f44a-68ca-1500-8168-ccaf25a800b1/messages" target="_blank" class="icon-inline"></a>
+             (sub)context of the "_Protocol" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac135cf6-63a8-1dc2-8163-ab7583ea0053/messages" target="_blank" class="icon-inline"></a> context, using <a href="http://www.collectiveone.org" target="_blank">the current prototype of CollectiveOne</a>. This is a simple example of how "contexts" can be used as conversation spaces and content containers.
           </div>
         </div>
       </div>
