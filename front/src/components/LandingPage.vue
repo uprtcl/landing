@@ -35,7 +35,7 @@
           {{ topSubsentence }}
           <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac109cd2-6939-1811-8169-399dca610084"
             target="_blank"
-            class="prtcl_-icon prtcl_-icon-grey">
+            class="prtcl_-icon prtcl_-icon-white">
           </a>
         </div>
         <div class="w3-row feature-row">
@@ -130,15 +130,18 @@
         <div class="w3-row learn-more">
           <a href="https://goo.gl/forms/gyIeT8LxnH0tVbFw2">Learn more!</a>
         </div>
+        <div class="w3-row light-background">
+          <div class="explain-row">
+            * The content of this page is specified in the "Landing" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a03130000/messages" class="icon-inline"></a> (sub)context of the "Branding" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac12f44a-68ca-1500-8168-ccaf25a800b1/messages" class="icon-inline"></a>
+             (sub)context of the "_Protocol" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac135cf6-63a8-1dc2-8163-ab7583ea0053/messages" class="icon-inline"></a> context, using <a href="http://www.collectiveone.org">the current prototype of CollectiveOne</a>. This is a simple example of how "contexts" can be used as conversation spaces and content containers.
+          </div>
+        </div>
       </div>
     </div>
     <div v-else class="">
       <img class="loader-gif" src="./../assets/spinner-loop.gif" alt="">
     </div>
-  </div
-  max-width: 400px;
-  margin: 0 auto;>
-
+  </div>
 </template>
 
 <script>
@@ -198,10 +201,10 @@ export default {
           topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 4').card.text
         ]
         this.keyFeaturesUrls = [
-          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce11730001',
-          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce378b0023',
-          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce56f90045',
-          'https://www.collectiveone.org/#/app/inits/ac12cace-66f9-1475-8166-fcda2a0e0001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce76890067'
+          'https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce11730001',
+          'https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce378b0023',
+          'https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce56f90045',
+          'https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce76890067'
         ]
         let techSection = subsections.find(s => s.title === 'Technical Section')
         this.techFeatures = [
@@ -235,14 +238,6 @@ export default {
   cursor: pointer;
   height: 15px;
   width: 15px;
-}
-
-.prtcl_-icon-grey {
-  background: url('./../assets/grey_.png')  center left / cover no-repeat;
-}
-
-.prtcl_-icon-grey:hover {
-  background: url('./../assets/white_.png')  center left / cover no-repeat;
 }
 
 .prtcl_-icon-white {
@@ -473,5 +468,18 @@ export default {
   padding: 20px 10px 40px 10px;
 }
 
+.explain-row {
+  padding: 20px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.icon-inline {
+  display: inline-block;
+  vertical-align: text-bottom;
+  height: 16px;
+  width: 16px;
+  background: url('./../assets/black_.png') center left / cover no-repeat;
+}
 
 </style>
