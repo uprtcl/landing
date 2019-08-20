@@ -52,19 +52,39 @@
             </div>
             <div class="feature-vert-container feature-text-container">
               <div class="feature-text relative">
-                {{ keyFeatures[keyFeatureIx] }}
-                <a :href="keyFeaturesUrls[keyFeatureIx]"
+                {{ keyFeatures[0] }}
+                <a :href="keyFeaturesUrls[0]"
                   target="_blank"
                   class="prtcl_-icon prtcl_-icon-white features-icon">
                 </a>
               </div>
             </div>
-            <div @click="swipeLeft()" class="feature-vert-container feature-right-container">
-              <img src="./../assets/arrow.png" alt="">
+          </div>
+          <div class="w3-row features-container">
+            <div class="feature-background">
+              <img src="./../assets/feature-background.png" alt="">
             </div>
-            <div @click="swipeRight()" class="feature-vert-container feature-left-container">
-              <div class="arrow-row">
-                <img src="./../assets/arrow.png" alt="">
+            <div class="feature-vert-container feature-text-container">
+              <div class="feature-text relative">
+                {{ keyFeatures[1] }}
+                <a :href="keyFeaturesUrls[1]"
+                  target="_blank"
+                  class="prtcl_-icon prtcl_-icon-white features-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w3-row features-container">
+            <div class="feature-background">
+              <img src="./../assets/feature-background.png" alt="">
+            </div>
+            <div class="feature-vert-container feature-text-container">
+              <div class="feature-text relative">
+                {{ keyFeatures[2] }}
+                <a :href="keyFeaturesUrls[2]"
+                  target="_blank"
+                  class="prtcl_-icon prtcl_-icon-white features-icon">
+                </a>
               </div>
             </div>
           </div>
@@ -128,7 +148,10 @@
           </a>
         </div>
         <div class="w3-row learn-more">
-          <a href="https://goo.gl/forms/gyIeT8LxnH0tVbFw2">Learn more!</a>
+          <a href="https://github.com/uprtcl/spec" target="blank">
+            <img src='./../assets/github.svg'/><br><br>
+          </a>          
+          <a href="https://goo.gl/forms/gyIeT8LxnH0tVbFw2">Subscribe for updates!</a>
         </div>
         <div class="w3-row light-background">
           <div class="explain-row">
@@ -158,39 +181,12 @@ export default {
       topSentence: '',
       topSubsentence: '',
       featuresTitle: '',
-      keyFeatures: [],
-      keyFeatureIx: 0,
       techFeatures: [],
       keyFeaturesUrls: [],
-      timerId: null
     }
   },
 
   methods: {
-    swipeLeft () {
-      clearInterval(this.timerId)
-      this.switchFeature (true)
-    },
-    swipeRight () {
-      clearInterval(this.timerId)
-      this.switchFeature (false)
-    },
-    switchFeature (left) {
-      let left2 = typeof left === 'undefined' ? true : left
-      if (left2) {
-        this.keyFeatureIx = this.keyFeatureIx + 1
-
-        if (this.keyFeatureIx >= this.keyFeatures.length) {
-          this.keyFeatureIx = 0
-        }
-      } else {
-        this.keyFeatureIx = this.keyFeatureIx - 1
-
-        if (this.keyFeatureIx < 0) {
-          this.keyFeatureIx = this.keyFeatureIx = this.keyFeatures.length - 1
-        }
-      }
-    },
     updateContent () {
       this.loading = true
       this.axios.get('http://www.collectiveone.org/1/model/section/ac109cd2-6939-1811-8169-399a03130000', {
@@ -208,8 +204,7 @@ export default {
         this.keyFeatures = [
           topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 1').card.text,
           topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 2').card.text,
-          topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 3').card.text,
-          topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 4').card.text
+          topSection.cardsWrappersCommon.find(c => c.card.title === 'Key Feature 3').card.text
         ]
         this.keyFeaturesUrls = [
           'https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a9fd20021/cards/ac137866-6949-1dbf-8169-49ce11730001',
@@ -231,7 +226,6 @@ export default {
 
   created () {
     this.updateContent()
-    this.timerId = setInterval(this.switchFeature, 3500)
   }
 
 }
@@ -363,8 +357,7 @@ export default {
 }
 
 .section.second {
-  height: 70vh;
-  max-height: 500px;
+  padding-bottom: 30px;
 }
 
 .second > .top-subsentence {
@@ -375,7 +368,6 @@ export default {
 }
 
 .second > .feature-row {
-  height: 70%;
 }
 
 .second > .feature-row > .features-title {
@@ -392,6 +384,7 @@ export default {
   position: relative;
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 .second .feature-background {
@@ -415,7 +408,8 @@ export default {
 .second .feature-text-container {
   width: 100%;
   padding: 0px 30px;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .second .feature-right-container {
@@ -437,7 +431,7 @@ export default {
 .second .feature-left-container .arrow-row > img {
   transform: rotate(180deg);
   float: right;
-  width: 20px;
+  width: 18px;
 }
 
 .section.third {
@@ -478,6 +472,10 @@ export default {
 
 .contact .learn-more {
   padding: 20px 10px 40px 10px;
+}
+
+.learn-more img {
+  width: 35px;
 }
 
 .explain-row {
