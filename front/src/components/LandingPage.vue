@@ -138,22 +138,47 @@
           </a>
         </div>
       </div>
-      <div class="w3-row section contact">
-        <div class="w3-row text-div">
-          The underscore protocol is an initiative of
+      <div class="w3-row section demo">
+        <div class="w3-mobile tutorial-video-container">
+          <div class="spec-feature-text">
+            <h3>Proof-Of-Concept / DEMO</h3>
+            <p>A document is created as an Evee (called context at the time :) ), and is made
+              of multiple Evees. New perspectives are created in a Web Server and in Ethereum + IPFS,
+              they are branched and merged, and combined with Evees from other documents.</p>
+          </div>
+          <div class="">
+            <video controls >
+              <source src="https://collectiveone-b1.s3.us-east-2.amazonaws.com/Web/uprtcl-demo-02.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
-        <div class="w3-row">
-          <a href="http://www.collectiveone.org">
-            <img src="./../assets/c1-logo.png" alt="">
+      </div>
+
+      <div class="w3-row section third light-background">
+        <div class="spec-feature-text relative">
+          <div class="" v-html="commingSoon"></div>
+          <br>
+          <div class="w3-row learn-more">
+            <a href="https://twitter.com/uprtcl" target="blank">
+              <img src='./../assets/twitter.png'/><br><br>
+            </a>
+            <a href="https://github.com/uprtcl/spec" target="blank">
+              <img src='./../assets/github.svg'/><br><br>
+            </a>          
+            <a href="https://goo.gl/forms/gyIeT8LxnH0tVbFw2">
+              Subscribe for updates!
+            </a>
+          </div>
+          <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-39a080b900c7/cards/ac109cd2-6939-1811-8169-39b9e46401d1"
+            target="_blank"
+            class="prtcl_-icon prtcl_-icon-white">
           </a>
         </div>
-        <div class="w3-row learn-more">
-          <a href="https://github.com/uprtcl/spec" target="blank">
-            <img src='./../assets/github.svg'/><br><br>
-          </a>          
-          <a href="https://goo.gl/forms/gyIeT8LxnH0tVbFw2">Subscribe for updates!</a>
-        </div>
-        <div class="w3-row light-background">
+      </div>
+      
+      <div class="w3-row section contact">
+        <div class="w3-row">
           <div class="explain-row">
             * The content of this page is specified in the "Landing" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac109cd2-6939-1811-8169-399a03130000/messages" target="_blank" class="icon-inline"></a> (sub)context of the "Branding" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac12f44a-68ca-1500-8168-ccaf25a800b1/messages" target="_blank" class="icon-inline"></a>
              (sub)context of the "_Protocol" <a href="https://www.collectiveone.org/#/app/inits/ac119496-5e3e-1db5-815e-3f192a890001/model/section/ac135cf6-63a8-1dc2-8163-ab7583ea0053/messages" target="_blank" class="icon-inline"></a> context, using <a href="http://www.collectiveone.org" target="_blank">the current prototype of CollectiveOne</a>. This is a simple example of how "contexts" can be used as conversation spaces and content containers.
@@ -183,6 +208,7 @@ export default {
       featuresTitle: '',
       techFeatures: [],
       keyFeaturesUrls: [],
+      commingSoon: ''
     }
   },
 
@@ -220,6 +246,7 @@ export default {
           techSection.cardsWrappersCommon.find(c => c.card.title === 'cocreation').card.text
         ]
         document.title = this.projectName
+        this.commingSoon = techSection.cardsWrappersCommon.find(c => c.card.title === 'comming soon').card.text;
       })
     }
   },
@@ -321,6 +348,14 @@ export default {
   .section > .center > .w3-col {
     height: 100%;
   }
+}
+
+.tutorial-video-container {
+  text-align: center;
+}
+.tutorial-video-container video {
+  width: 100%;
+  max-width: 800px;
 }
 
 .center > .logo-col > .logo-container {
@@ -435,8 +470,11 @@ export default {
 }
 
 .section.third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 80vh;
-  max-height: 540px;
+  max-height: 600px;
   padding-top: 20px;
 }
 
@@ -453,8 +491,7 @@ export default {
   height: 100%;
 }
 
-.third .spec-feature-text {
-  height: calc(100% - 150px);
+.spec-feature-text {
   padding: 10px 10px;
   max-width: 380px;
   margin: 0 auto;
